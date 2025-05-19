@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/rules", "destination": "/rules.html" }
-    { "source": "/partners", "destination": "/partners.html" }
+    { "source": "/rules", "destination": "/rules.html" },
+    { "source": "/partners", "destination": "/partners.html" },
     { "source": "/staff", "destination": "/staff.html" }
   ]
 }
