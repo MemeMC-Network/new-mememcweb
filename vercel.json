@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/rules.html",
+      "destination": "/rules"
+    }
+  ]
+}
