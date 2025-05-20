@@ -7,3 +7,18 @@
     { "source": "/memetwitch", "destination": "https://twitch.tv/mememasterislive/" }
   ]
 }
+
+    {
+      "redirects": [
+        {
+          "source": "https://www.mememc.club/status",
+          "destination": "https://status.mememc.xyz/",
+          "status": 301
+        },
+        {
+          "source": "https://www.mememc.club/memetwitch",
+          "destination": "https://twitch.tv/mememasterislive/",
+          "status": 301
+        }
+      ]
+    }
