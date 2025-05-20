@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/rules", "destination": "/rules.html" },
     { "source": "/partners", "destination": "/partners.html" },
-    { "source": "/staff", "destination": "/staff.html" }
+    { "source": "/staff", "destination": "/staff.html" },
+    { "source": "/status", "destination": "https://status.mememc.xyz/" },
+    { "source": "/memetwitch", "destination": "https://twitch.tv/mememasterislive/" }
   ]
 }
