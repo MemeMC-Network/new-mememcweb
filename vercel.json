@@ -6,6 +6,8 @@
   ],
   "redirects": [
     { "source": "/status", "destination": "https://status.mememc.xyz", "permanent": true },
-    { "source": "/memetwitch", "destination": "https://twitch.tv/mememasterislive", "permanent": true }
+    { "source": "/memetwitch", "destination": "https://twitch.tv/mememasterislive", "permanent": true },
+    { "source": "/discord", "destination": "https://dsc.gg/mememc", "permanent": true }
+    { "source": "/socials", "destination": "https://bio.site/mememc", "permanent": true }
   ]
 }
