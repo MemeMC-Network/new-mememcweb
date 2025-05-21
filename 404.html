@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MemeMC - 404</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    
     :root {
-      --primary: #3b82f6;
-      --secondary: #60a5fa;
-      --background: #f8fafc;
-      --text: #1e293b;
-      --muted: #64748b;
+      --primary: #6366f1;
+      --secondary: #8b5cf6;
+      --accent: #ec4899;
+      --background: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --success: #10b981;
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-15px) rotate(2deg); }
     }
 
     @keyframes blink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      50% { opacity: 0.5; }
     }
 
     @keyframes spin {
@@ -28,8 +32,24 @@
       to { transform: rotate(360deg); }
     }
 
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       background: var(--background);
       color: var(--text);
       margin: 0;
@@ -39,172 +59,346 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.6;
       overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
     }
 
     .container {
-      max-width: 500px;
-      padding: 2rem;
+      max-width: 600px;
+      padding: 3rem 2rem;
       position: relative;
+      animation: slideIn 0.8s ease-out;
     }
 
-    .alien {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+    .error-illustration {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .planet {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
       display: inline-block;
-      animation: float 3s ease-in-out infinite;
+      position: relative;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .crater {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+    }
+
+    .crater-1 { width: 25px; height: 25px; top: 20px; left: 30px; }
+    .crater-2 { width: 15px; height: 15px; top: 50px; left: 80px; }
+    .crater-3 { width: 20px; height: 20px; bottom: 30px; right: 40px; }
+
+    .alien {
+      position: absolute;
+      font-size: 3rem;
+      bottom: -20px;
+      right: -20px;
+      animation: float 3s ease-in-out infinite, blink 4s infinite;
+      transform-origin: center bottom;
     }
 
     .error-code {
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: 800;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      background: linear-gradient(to right, var(--primary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin: 0.5rem 0;
       position: relative;
+      text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
     }
 
     .error-code::after {
-      content: "🚀";
+      content: "👽";
       position: absolute;
-      right: -40px;
+      right: -50px;
       top: 50%;
       transform: translateY(-50%);
-      animation: blink 2s infinite;
+      animation: float 2.5s ease-in-out infinite;
     }
 
     h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      background: linear-gradient(to right, var(--text), var(--muted));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .subtitle {
       color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+      min-height: 3.6rem;
     }
 
     .btn {
-      background: var(--primary);
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
       border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
       text-decoration: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      box-shadow: 
+        0 4px 15px rgba(99, 102, 241, 0.4),
+        0 0 0 2px rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
     }
 
     .btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 8px 25px rgba(99, 102, 241, 0.5),
+        0 0 0 2px rgba(255, 255, 255, 0.2);
     }
 
     .btn:active {
       transform: translateY(0);
     }
 
-    .ufo {
+    .btn::before {
+      content: '';
       position: absolute;
-      font-size: 2rem;
-      animation: spin 10s linear infinite;
-      opacity: 0.2;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
+      overflow: hidden;
     }
 
-    .ufo:nth-child(1) {
-      top: -50px;
-      left: -50px;
+    .star {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle var(--duration) infinite ease-in-out;
     }
 
-    .ufo:nth-child(2) {
-      bottom: -30px;
-      right: -30px;
-      animation-direction: reverse;
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .satellite {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: spin var(--speed) linear infinite;
+      z-index: -1;
     }
 
     .footer {
       position: absolute;
-      bottom: 1rem;
+      bottom: 1.5rem;
       width: 100%;
       text-align: center;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .error-id {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-family: monospace;
     }
 
     .confetti {
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: var(--primary);
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent);
       opacity: 0;
-      z-index: -1;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .shake {
+      animation: shake 0.5s;
     }
   </style>
 </head>
 <body>
+  <div class="stars" id="stars"></div>
+  
   <div class="container">
-    <div class="ufo">🛸</div>
-    <div class="ufo">👽</div>
+    <div class="error-illustration">
+      <div class="planet">
+        <div class="crater crater-1"></div>
+        <div class="crater crater-2"></div>
+        <div class="crater crater-3"></div>
+      </div>
+      <div class="alien">👾</div>
+    </div>
     
-    <div class="alien">👾</div>
     <div class="error-code">404</div>
     
-    <h1>Houston, We Have a Problem</h1>
-    <p class="subtitle">
-      The page you're looking for has been abducted by aliens.<br>
-      Or maybe we just misplaced it. (Definitely the aliens)
-    </p>
+    <h1 id="errorTitle">Intergalactic Navigation Error</h1>
+    <p class="subtitle" id="errorMessage"></p>
     
     <button id="homeBtn" class="btn">
-      <span>Beam Me Home</span> 
-      <span>🔭</span>
+      <span>Warp Drive Home</span> 
+      <span>🚀</span>
     </button>
 
     <div class="footer">
-      <p>Error Code: LOST_IN_SPACE_42</p>
-      <p>Pro tip: Don't panic. It's just a 404.</p>
+      <p>Don't panic! It's just a 404.</p>
+      <div class="error-id" id="errorId"></div>
     </div>
   </div>
 
   <script>
+    // Create stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.width = `${Math.random() * 3 + 1}px`;
+      star.style.height = star.style.width;
+      star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+      starsContainer.appendChild(star);
+    }
+
+    // Create satellites
+    for (let i = 0; i < 3; i++) {
+      const satellite = document.createElement('div');
+      satellite.classList.add('satellite');
+      satellite.innerHTML = ['🛰️', '🛸', '🧑‍🚀'][i];
+      satellite.style.left = `${Math.random() * 90 + 5}%`;
+      satellite.style.top = `${Math.random() * 90 + 5}%`;
+      satellite.style.setProperty('--speed', `${Math.random() * 30 + 30}s`);
+      document.body.appendChild(satellite);
+    }
+
+    // Error messages
+    const errorTitles = [
+      "Intergalactic Navigation Error",
+      "Warp Drive Malfunction",
+      "Black Hole Redirect",
+      "Space-Time Continuum Disrupted",
+      "Cosmic Dead End",
+      "Orbital Path Not Found",
+      "Hyperlink to Nowhere",
+      "Lost in the Digital Void"
+    ];
+
+    const errorMessages = [
+      "The page you're seeking has been sucked into a black hole. Or maybe we misplaced it.",
+      "Our space monkeys must have chewed through the cables again. Sorry about that!",
+      "This page is currently on a coffee break somewhere in the Andromeda galaxy.",
+      "The page was here, but then the cat walked on the keyboard and... poof!",
+      "We've sent a search party to the Oort Cloud to look for this page.",
+      "The page you requested has achieved digital nirvana and transcended our servers.",
+      "This page is currently being used as a coaster by aliens in Alpha Centauri.",
+      "The page took one look at 2023 and decided to retire early.",
+      "This page is on strike demanding better working conditions in the cloud.",
+      "The page was abducted by aliens who mistook it for ancient human literature.",
+      "Our quantum flux capacitor couldn't locate this page in any known dimension.",
+      "The page joined a band and is currently touring the Milky Way."
+    ];
+
+    const errorCodes = [
+      "ERROR_42: PAGE_NOT_FOUND",
+      "CODE: LOST_IN_SPACE",
+      "ERROR: HITCHHIKERS_FAULT",
+      "CODE: TRIBBLE_OVERFLOW",
+      "ERROR: WARP_CORE_BREACH",
+      "CODE: IMPULSE_ENGINE_FAILURE",
+      "ERROR: DILITHIUM_CRYSTAL_MISSING",
+      "CODE: SPACE_TIME_ANOMALY"
+    ];
+
+    // Randomize content
+    function randomizeContent() {
+      document.getElementById('errorTitle').textContent = 
+        errorTitles[Math.floor(Math.random() * errorTitles.length)];
+      
+      document.getElementById('errorMessage').textContent = 
+        errorMessages[Math.floor(Math.random() * errorMessages.length)];
+      
+      document.getElementById('errorId').textContent = 
+        errorCodes[Math.floor(Math.random() * errorCodes.length)];
+    }
+
+    // Initial randomization
+    randomizeContent();
+
+    // Randomize content every 8 seconds
+    setInterval(randomizeContent, 8000);
+
+    // Home button click handler
     document.getElementById('homeBtn').addEventListener('click', function() {
-      // Create confetti effect
-      for (let i = 0; i < 30; i++) {
+      // Add shake animation
+      this.classList.add('shake');
+      setTimeout(() => this.classList.remove('shake'), 500);
+      
+      // Create warp drive effect
+      for (let i = 0; i < 50; i++) {
         createConfetti();
       }
       
       // Navigate home after a slight delay
       setTimeout(() => {
         window.location.href = '/';
-      }, 800);
+      }, 1000);
     });
 
+    // Create confetti
     function createConfetti() {
       const confetti = document.createElement('div');
       confetti.className = 'confetti';
       
-      // Random position
-      const xPos = Math.random() * window.innerWidth;
-      const yPos = Math.random() * window.innerHeight;
+      // Random position near button
+      const btnRect = document.getElementById('homeBtn').getBoundingClientRect();
+      const xPos = btnRect.left + btnRect.width/2 + (Math.random() - 0.5) * 100;
+      const yPos = btnRect.top + btnRect.height/2 + (Math.random() - 0.5) * 100;
       
       // Random color
-      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+      const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
       const color = colors[Math.floor(Math.random() * colors.length)];
       
-      // Random size
+      // Random size and shape
       const size = Math.random() * 10 + 5;
+      const isSquare = Math.random() > 0.7;
       
       // Apply styles
       confetti.style.left = `${xPos}px`;
@@ -212,21 +406,44 @@
       confetti.style.backgroundColor = color;
       confetti.style.width = `${size}px`;
       confetti.style.height = `${size}px`;
-      confetti.style.borderRadius = '50%';
+      confetti.style.borderRadius = isSquare ? '2px' : '50%';
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
       
       document.body.appendChild(confetti);
       
       // Animation
+      const angle = (Math.random() - 0.5) * Math.PI * 0.5;
+      const xMovement = Math.cos(angle) * (Math.random() * 200 + 100);
+      const yMovement = Math.sin(angle) * (Math.random() * 200 + 100);
+      
       const animation = confetti.animate([
-        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-        { transform: `translateY(${window.innerHeight}px) rotate(360deg)`, opacity: 0 }
+        { 
+          transform: 'translate(0, 0) rotate(0deg)',
+          opacity: 1 
+        },
+        { 
+          transform: `translate(${xMovement}px, ${-yMovement}px) rotate(${Math.random() * 360}deg)`,
+          opacity: 0 
+        }
       ], {
-        duration: Math.random() * 2000 + 1000,
+        duration: Math.random() * 1000 + 1000,
         easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
       });
       
       animation.onfinish = () => confetti.remove();
     }
+
+    // Easter egg - click on alien
+    document.querySelector('.alien').addEventListener('click', function() {
+      this.textContent = '👽';
+      setTimeout(() => {
+        this.textContent = '👾';
+      }, 1000);
+      
+      // Special message
+      document.getElementById('errorMessage').textContent = 
+        "The aliens say hello! They're still looking for your page though...";
+    });
   </script>
 </body>
 </html>
