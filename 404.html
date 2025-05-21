@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MemeMC - 404</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --secondary: #60a5fa;
+      --background: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .alien {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .error-code {
+      font-size: 5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 0.5rem 0;
+      position: relative;
+    }
+
+    .error-code::after {
+      content: "🚀";
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: blink 2s infinite;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .ufo {
+      position: absolute;
+      font-size: 2rem;
+      animation: spin 10s linear infinite;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .ufo:nth-child(1) {
+      top: -50px;
+      left: -50px;
+    }
+
+    .ufo:nth-child(2) {
+      bottom: -30px;
+      right: -30px;
+      animation-direction: reverse;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--primary);
+      opacity: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ufo">🛸</div>
+    <div class="ufo">👽</div>
+    
+    <div class="alien">👾</div>
+    <div class="error-code">404</div>
+    
+    <h1>Houston, We Have a Problem</h1>
+    <p class="subtitle">
+      The page you're looking for has been abducted by aliens.<br>
+      Or maybe we just misplaced it. (Definitely the aliens)
+    </p>
+    
+    <button id="homeBtn" class="btn">
+      <span>Beam Me Home</span> 
+      <span>🔭</span>
+    </button>
+
+    <div class="footer">
+      <p>Error Code: LOST_IN_SPACE_42</p>
+      <p>Pro tip: Don't panic. It's just a 404.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('homeBtn').addEventListener('click', function() {
+      // Create confetti effect
+      for (let i = 0; i < 30; i++) {
+        createConfetti();
+      }
+      
+      // Navigate home after a slight delay
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 800);
+    });
+
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      
+      // Random position
+      const xPos = Math.random() * window.innerWidth;
+      const yPos = Math.random() * window.innerHeight;
+      
+      // Random color
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      // Random size
+      const size = Math.random() * 10 + 5;
+      
+      // Apply styles
+      confetti.style.left = `${xPos}px`;
+      confetti.style.top = `${yPos}px`;
+      confetti.style.backgroundColor = color;
+      confetti.style.width = `${size}px`;
+      confetti.style.height = `${size}px`;
+      confetti.style.borderRadius = '50%';
+      
+      document.body.appendChild(confetti);
+      
+      // Animation
+      const animation = confetti.animate([
+        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+        { transform: `translateY(${window.innerHeight}px) rotate(360deg)`, opacity: 0 }
+      ], {
+        duration: Math.random() * 2000 + 1000,
+        easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+      });
+      
+      animation.onfinish = () => confetti.remove();
+    }
+  </script>
+</body>
+</html>
