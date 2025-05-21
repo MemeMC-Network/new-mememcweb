@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MemeMC - 404</title>
+  <title>404 - Intergalactic Mishap</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
     
@@ -146,6 +146,12 @@
       min-height: 3.6rem;
     }
 
+    .btn-container {
+      margin: 2rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
     .btn {
       background: linear-gradient(to right, var(--primary), var(--secondary));
       color: white;
@@ -273,10 +279,12 @@
     <h1 id="errorTitle">Intergalactic Navigation Error</h1>
     <p class="subtitle" id="errorMessage"></p>
     
-    <button id="homeBtn" class="btn">
-      <span>Warp Drive Home</span> 
-      <span>🚀</span>
-    </button>
+    <div class="btn-container">
+      <button id="homeBtn" class="btn">
+        <span>Warp Drive Home</span> 
+        <span>🚀</span>
+      </button>
+    </div>
 
     <div class="footer">
       <p>Don't panic! It's just a 404.</p>
@@ -366,7 +374,9 @@
     setInterval(randomizeContent, 8000);
 
     // Home button click handler
-    document.getElementById('homeBtn').addEventListener('click', function() {
+    document.getElementById('homeBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
       // Add shake animation
       this.classList.add('shake');
       setTimeout(() => this.classList.remove('shake'), 500);
