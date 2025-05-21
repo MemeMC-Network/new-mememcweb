@@ -27,11 +27,6 @@
       50% { opacity: 0.5; }
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
@@ -68,12 +63,15 @@
 
     .container {
       max-width: 600px;
-      padding: 3rem 2rem;
+      padding: 2rem;
       position: relative;
       animation: slideIn 0.8s ease-out;
       display: flex;
       flex-direction: column;
-      min-height: 80vh;
+      min-height: auto;
+      height: 100vh;
+      box-sizing: border-box;
+      justify-content: space-between;
     }
 
     .content {
@@ -81,6 +79,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-bottom: 2rem;
     }
 
     .error-illustration {
@@ -157,7 +156,7 @@
     }
 
     .btn-container {
-      margin: 2rem 0 3rem;
+      margin: 2rem 0;
       position: relative;
       z-index: 1;
     }
@@ -240,11 +239,12 @@
     }
 
     .footer {
-      margin-top: auto;
-      padding-top: 2rem;
+      padding: 1rem 0;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
 
     .error-id {
@@ -468,9 +468,12 @@
       document.getElementById('errorMessage').textContent = 
         "The forest spirits say hello! They're still looking for your page though...";
     });
+
+    // Remove any browser-added elements (like "share refresh" text)
+    document.addEventListener('DOMContentLoaded', function() {
+      const unwantedElements = document.querySelectorAll('[style*="share refresh"]');
+      unwantedElements.forEach(el => el.remove());
+    });
   </script>
 </body>
 </html>
-Share
-Refresh
-
