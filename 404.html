@@ -49,6 +49,7 @@
       color: var(--text);
       margin: 0;
       padding: 0;
+      height: 100vh;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -56,6 +57,7 @@
       text-align: center;
       line-height: 1.6;
       overflow-x: hidden;
+      overflow: hidden;
       background-image: 
         radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(4, 120, 87, 0.1) 0%, transparent 20%);
@@ -63,7 +65,7 @@
 
     .container {
       max-width: 600px;
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 0.5rem;
       position: relative;
       animation: slideIn 0.8s ease-out;
       display: flex;
@@ -78,6 +80,8 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
       justify-content: center;
       padding-bottom: 2rem;
     }
