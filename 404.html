@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Intergalactic Mishap</title>
+  <title>MemeMC - 404</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
     
     :root {
-      --primary: #6366f1;
-      --secondary: #8b5cf6;
-      --accent: #ec4899;
-      --background: #0f172a;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --success: #10b981;
+      --primary: #10b981;
+      --secondary: #047857;
+      --accent: #84cc16;
+      --background: #022c22;
+      --text: #ecfdf5;
+      --muted: #a7f3d0;
+      --highlight: #d1fae5;
     }
 
     @keyframes float {
@@ -62,8 +62,8 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(4, 120, 87, 0.1) 0%, transparent 20%);
     }
 
     .container {
@@ -71,6 +71,16 @@
       padding: 3rem 2rem;
       position: relative;
       animation: slideIn 0.8s ease-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 80vh;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .error-illustration {
@@ -81,11 +91,11 @@
     .planet {
       width: 120px;
       height: 120px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
       border-radius: 50%;
       display: inline-block;
       position: relative;
-      box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
       animation: pulse 4s ease-in-out infinite;
     }
 
@@ -111,17 +121,17 @@
     .error-code {
       font-size: 6rem;
       font-weight: 800;
-      background: linear-gradient(to right, var(--primary), var(--accent));
+      background: linear-gradient(to right, var(--accent), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin: 0.5rem 0;
       position: relative;
-      text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+      text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
 
     .error-code::after {
-      content: "👽";
+      content: "🌿";
       position: absolute;
       right: -50px;
       top: 50%;
@@ -147,14 +157,14 @@
     }
 
     .btn-container {
-      margin: 2rem 0;
+      margin: 2rem 0 3rem;
       position: relative;
       z-index: 1;
     }
 
     .btn {
       background: linear-gradient(to right, var(--primary), var(--secondary));
-      color: white;
+      color: var(--highlight);
       border: none;
       padding: 1rem 2rem;
       border-radius: 50px;
@@ -167,7 +177,7 @@
       gap: 0.8rem;
       text-decoration: none;
       box-shadow: 
-        0 4px 15px rgba(99, 102, 241, 0.4),
+        0 4px 15px rgba(16, 185, 129, 0.4),
         0 0 0 2px rgba(255, 255, 255, 0.1);
       position: relative;
       overflow: hidden;
@@ -176,7 +186,7 @@
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 
-        0 8px 25px rgba(99, 102, 241, 0.5),
+        0 8px 25px rgba(16, 185, 129, 0.5),
         0 0 0 2px rgba(255, 255, 255, 0.2);
     }
 
@@ -211,7 +221,7 @@
 
     .star {
       position: absolute;
-      background-color: white;
+      background-color: var(--highlight);
       border-radius: 50%;
       animation: twinkle var(--duration) infinite ease-in-out;
     }
@@ -226,12 +236,12 @@
       font-size: 1.5rem;
       animation: spin var(--speed) linear infinite;
       z-index: -1;
+      color: var(--accent);
     }
 
     .footer {
-      position: absolute;
-      bottom: 1.5rem;
-      width: 100%;
+      margin-top: auto;
+      padding-top: 2rem;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
@@ -259,31 +269,40 @@
     .shake {
       animation: shake 0.5s;
     }
+
+    .leaf {
+      position: absolute;
+      font-size: 1.2rem;
+      animation: float 4s ease-in-out infinite;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
   <div class="stars" id="stars"></div>
   
   <div class="container">
-    <div class="error-illustration">
-      <div class="planet">
-        <div class="crater crater-1"></div>
-        <div class="crater crater-2"></div>
-        <div class="crater crater-3"></div>
+    <div class="content">
+      <div class="error-illustration">
+        <div class="planet">
+          <div class="crater crater-1"></div>
+          <div class="crater crater-2"></div>
+          <div class="crater crater-3"></div>
+        </div>
+        <div class="alien">🌱</div>
       </div>
-      <div class="alien">👾</div>
-    </div>
-    
-    <div class="error-code">404</div>
-    
-    <h1 id="errorTitle">Intergalactic Navigation Error</h1>
-    <p class="subtitle" id="errorMessage"></p>
-    
-    <div class="btn-container">
-      <button id="homeBtn" class="btn">
-        <span>Warp Drive Home</span> 
-        <span>🚀</span>
-      </button>
+      
+      <div class="error-code">404</div>
+      
+      <h1 id="errorTitle">Lost in the Digital Forest</h1>
+      <p class="subtitle" id="errorMessage"></p>
+      
+      <div class="btn-container">
+        <button id="homeBtn" class="btn">
+          <span>Find Your Way Home</span> 
+          <span>🌲</span>
+        </button>
+      </div>
     </div>
 
     <div class="footer">
@@ -306,53 +325,54 @@
       starsContainer.appendChild(star);
     }
 
-    // Create satellites
-    for (let i = 0; i < 3; i++) {
-      const satellite = document.createElement('div');
-      satellite.classList.add('satellite');
-      satellite.innerHTML = ['🛰️', '🛸', '🧑‍🚀'][i];
-      satellite.style.left = `${Math.random() * 90 + 5}%`;
-      satellite.style.top = `${Math.random() * 90 + 5}%`;
-      satellite.style.setProperty('--speed', `${Math.random() * 30 + 30}s`);
-      document.body.appendChild(satellite);
+    // Create leaves
+    for (let i = 0; i < 8; i++) {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      leaf.innerHTML = ['🍃', '🌿', '🍀'][i % 3];
+      leaf.style.left = `${Math.random() * 100}%`;
+      leaf.style.top = `${Math.random() * 100}%`;
+      leaf.style.fontSize = `${Math.random() * 1 + 1}rem`;
+      leaf.style.animationDuration = `${Math.random() * 3 + 3}s`;
+      document.body.appendChild(leaf);
     }
 
     // Error messages
     const errorTitles = [
-      "Intergalactic Navigation Error",
-      "Warp Drive Malfunction",
-      "Black Hole Redirect",
-      "Space-Time Continuum Disrupted",
-      "Cosmic Dead End",
-      "Orbital Path Not Found",
-      "Hyperlink to Nowhere",
-      "Lost in the Digital Void"
+      "Lost in the Digital Forest",
+      "Trail Not Found",
+      "Map Malfunction",
+      "Compass Spinning Wildly",
+      "Path Overgrown",
+      "GPS Signal Lost",
+      "Wanderer's Dilemma",
+      "Foliage Navigation Error"
     ];
 
     const errorMessages = [
-      "The page you're seeking has been sucked into a black hole. Or maybe we misplaced it.",
-      "Our space monkeys must have chewed through the cables again. Sorry about that!",
-      "This page is currently on a coffee break somewhere in the Andromeda galaxy.",
-      "The page was here, but then the cat walked on the keyboard and... poof!",
-      "We've sent a search party to the Oort Cloud to look for this page.",
-      "The page you requested has achieved digital nirvana and transcended our servers.",
-      "This page is currently being used as a coaster by aliens in Alpha Centauri.",
-      "The page took one look at 2023 and decided to retire early.",
-      "This page is on strike demanding better working conditions in the cloud.",
-      "The page was abducted by aliens who mistook it for ancient human literature.",
-      "Our quantum flux capacitor couldn't locate this page in any known dimension.",
-      "The page joined a band and is currently touring the Milky Way."
+      "The path you're seeking has been reclaimed by nature. Maybe try a different trail?",
+      "Our forest gnomes must have misplaced this page while gathering mushrooms.",
+      "This page is currently being used as a nest by digital birds.",
+      "The page was here, but then the wind blew and... rustle rustle!",
+      "We've sent a search party of friendly squirrels to look for this page.",
+      "The page you requested has become one with the forest ecosystem.",
+      "This page is currently being used as a picnic blanket by woodland creatures.",
+      "The page took one look at the wilderness and decided to go off-grid.",
+      "This page is on strike, demanding better sunlight and soil conditions.",
+      "The page was carried away by an overly enthusiastic river otter.",
+      "Our digital compass couldn't locate this page in any known forest.",
+      "The page joined a migrating flock and is currently wintering elsewhere."
     ];
 
     const errorCodes = [
-      "ERROR_42: PAGE_NOT_FOUND",
-      "CODE: LOST_IN_SPACE",
-      "ERROR: HITCHHIKERS_FAULT",
-      "CODE: TRIBBLE_OVERFLOW",
-      "ERROR: WARP_CORE_BREACH",
-      "CODE: IMPULSE_ENGINE_FAILURE",
-      "ERROR: DILITHIUM_CRYSTAL_MISSING",
-      "CODE: SPACE_TIME_ANOMALY"
+      "ERROR_42: TRAIL_NOT_FOUND",
+      "CODE: LOST_IN_FOREST",
+      "ERROR: MAP_ROT",
+      "CODE: COMPASS_FAILURE",
+      "ERROR: OVERGROWN_PATH",
+      "CODE: FOLIAGE_INTERFERENCE",
+      "ERROR: DIGITAL_IVY",
+      "CODE: FOREST_ANOMALY"
     ];
 
     // Randomize content
@@ -381,9 +401,9 @@
       this.classList.add('shake');
       setTimeout(() => this.classList.remove('shake'), 500);
       
-      // Create warp drive effect
-      for (let i = 0; i < 50; i++) {
-        createConfetti();
+      // Create leaf confetti effect
+      for (let i = 0; i < 30; i++) {
+        createLeafConfetti();
       }
       
       // Navigate home after a slight delay
@@ -392,8 +412,8 @@
       }, 1000);
     });
 
-    // Create confetti
-    function createConfetti() {
+    // Create leaf confetti
+    function createLeafConfetti() {
       const confetti = document.createElement('div');
       confetti.className = 'confetti';
       
@@ -402,21 +422,15 @@
       const xPos = btnRect.left + btnRect.width/2 + (Math.random() - 0.5) * 100;
       const yPos = btnRect.top + btnRect.height/2 + (Math.random() - 0.5) * 100;
       
-      // Random color
-      const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      
-      // Random size and shape
-      const size = Math.random() * 10 + 5;
-      const isSquare = Math.random() > 0.7;
+      // Random leaf type
+      const leaves = ['🍃', '🌿', '🍀'];
+      const leaf = leaves[Math.floor(Math.random() * leaves.length)];
       
       // Apply styles
+      confetti.textContent = leaf;
       confetti.style.left = `${xPos}px`;
       confetti.style.top = `${yPos}px`;
-      confetti.style.backgroundColor = color;
-      confetti.style.width = `${size}px`;
-      confetti.style.height = `${size}px`;
-      confetti.style.borderRadius = isSquare ? '2px' : '50%';
+      confetti.style.fontSize = `${Math.random() * 1 + 1}rem`;
       confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
       
       document.body.appendChild(confetti);
@@ -445,15 +459,18 @@
 
     // Easter egg - click on alien
     document.querySelector('.alien').addEventListener('click', function() {
-      this.textContent = '👽';
+      this.textContent = '🌳';
       setTimeout(() => {
-        this.textContent = '👾';
+        this.textContent = '🌱';
       }, 1000);
       
       // Special message
       document.getElementById('errorMessage').textContent = 
-        "The aliens say hello! They're still looking for your page though...";
+        "The forest spirits say hello! They're still looking for your page though...";
     });
   </script>
 </body>
 </html>
+Share
+Refresh
+
