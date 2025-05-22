@@ -3,3 +3,5 @@ Disallow: /animate.min.css
 Disallow: /vercel.json
 Disallow: /admin
 Disallow: /styles.css
+
+Sitemap: https://www.mememc.club/sitemap.xml
