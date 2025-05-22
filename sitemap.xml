@@ -1,31 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
 <url>
-  <loc>https://www.mememc.club/</loc>
-  <lastmod>2025-05-22T02:37:39+00:00</lastmod>
-  <priority>1.00</priority>
+  <loc>http://www.mememc.club/</loc>
+  <changefreq>daily</changefreq>
+  <lastmod>2025-05-21</lastmod>
 </url>
 <url>
-  <loc>https://www.mememc.club/rules</loc>
-  <lastmod>2025-05-22T02:37:40+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>http://www.mememc.club/rules</loc>
+  <changefreq>daily</changefreq>
+  <lastmod>2025-05-21</lastmod>
 </url>
 <url>
-  <loc>https://www.mememc.club/partners</loc>
-  <lastmod>2025-05-22T02:37:40+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>http://www.mememc.club/partners</loc>
+  <changefreq>daily</changefreq>
+  <lastmod>2025-05-21</lastmod>
 </url>
 <url>
-  <loc>https://www.mememc.club/staff</loc>
-  <lastmod>2025-05-22T02:37:40+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>http://www.mememc.club/staff</loc>
+  <changefreq>daily</changefreq>
+  <lastmod>2025-05-21</lastmod>
 </url>
-
-
 </urlset>
