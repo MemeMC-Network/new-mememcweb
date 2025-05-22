@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /animate.min.css
+Disallow: /vercel.json
+Disallow: /admin
+Disallow: /styles.css
