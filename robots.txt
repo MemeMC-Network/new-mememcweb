@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /animate.min.css
-Disallow: /vercel.json
-Disallow: /admin
-Disallow: /styles.css
+Disallow:
 
 Sitemap: https://www.mememc.club/sitemap.xml
