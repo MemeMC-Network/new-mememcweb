@@ -1,4 +1,10 @@
-<audio controls autoplay loop>
+<audio id="bgAudio" loop>
   <source src="/audios/lckn.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
+
+<script>
+  window.addEventListener('click', () => {
+    const audio = document.getElementById('bgAudio');
+    audio.play();
+  }, { once: true }); // Only on first click
+</script>
