@@ -358,10 +358,10 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="logo">🏠 MAAMAAZON</div>
+            <div class="logo">-=MAAMAAZON=-</div>
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search for blocks, tools, food, cars...">
-                <button class="search-btn">MINE</button>
+                <button class="search-btn">Search</button>
             </div>
             <div class="cart" onclick="openCart()">
                 🛒 CART
@@ -412,6 +412,14 @@
             <div class="category" onclick="filterProducts('transport')">
                 <h3>🚛 TRANSPORT</h3>
                 <p>Heavy-duty vehicles</p>
+            </div>
+            <div class="category" onclick="filterProducts('HFC')">
+                <h3>🍗 HFC</h3>
+                <p>Your favorite fried chicken</p>
+            </div>
+            <div class="category" onclick="filterProducts('armor')">
+                <h3>⚔️ ARMOR</h3>
+                <p>Need to get geared up. Here the armor is!</p>
             </div>
         </section>
 
@@ -473,7 +481,7 @@
             {id: 3, name: "Cooked Beef", price: 8, category: "food", emoji: "🥩", rating: "★★★★★", maxQuantity: 32},
             {id: 4, name: "Redstone Dust", price: 16, category: "redstone", emoji: "🔴", rating: "★★★★☆", maxQuantity: 16},
             {id: 5, name: "Enchanted Sword", price: 128, category: "tools", emoji: "⚔️", rating: "★★★★★", maxQuantity: 5},
-            {id: 27, name: "Gasoline", price: 5, category: "special", emoji: "⛽", rating: "★★★★★", maxQuantity: 20, unit: "500mb", isGasoline: true},
+            {id: 27, name: "Gasoline", price: 5, category: "special", emoji: "⛽", rating: "★★★★★", maxQuantity: 100, unit: "500mb", isGasoline: true},
             {id: 28, name: "Netherite Ingot", price: 256, category: "special", emoji: "⚫", rating: "★★★★★", maxQuantity: 8},
             {id: 29, name: "Dragon Egg", price: 1000, category: "special", emoji: "🥚", rating: "★★★★★", maxQuantity: 1},
             {id: 30, name: "Totem of Undying", price: 512, category: "special", emoji: "🗿", rating: "★★★★★", maxQuantity: 3},
@@ -482,22 +490,34 @@
             {id: 33, name: "End Portal Frame", price: 800, category: "blocks", emoji: "🟫", rating: "★★★★★", maxQuantity: 12},
             {id: 34, name: "Heart of the Sea", price: 300, category: "special", emoji: "💙", rating: "★★★★★", maxQuantity: 1},
             {id: 35, name: "Ancient Debris", price: 180, category: "blocks", emoji: "🪨", rating: "★★★★★", maxQuantity: 16},
+            {id: 36, name: "Fried Chicken", price: 5, category: "HFC", emoji: "🍗", rating: "★★★★★★", maxQuantity: 16},
+            {id: 37, name: "10pc Chicken Nugget", price: 10, category: "HFC", emoji: "🐔", rating: "★★★★★★", maxQuantity: 16},
+            {id: 38, name: "French Fries", price: 8, category: "HFC", emoji: "🍟", rating: "★★★★★★", maxQuantity: 16},
+            {id: 39, name: "Chicken Sandwich", price: 8, category: "HFC", emoji: "🐔🥪", rating: "★★★★★★", maxQuantity: 16},
+            {id: 40, name: "Hamburger", price: 8, category: "HFC", emoji: "🍔", rating: "★★★★★★", maxQuantity: 16},
+            // Armor Sets
+            {id: 40, name: "Leather Armor Full Set", price: 25, category: "armor", emoji: "", rating: "★★★☆☆", maxQuantity: 16},
+            {id: 40, name: "Chainmail Armor Full set", price: 50, category: "armor", emoji: "", rating: "★★★★☆", maxQuantity: 16},
+            {id: 40, name: "Iron Armor Full Set", price: 100, category: "armor", emoji: "", rating: "★★★★☆", maxQuantity: 16},
+            {id: 40, name: "Diamond Armor Full Set", price: 512, category: "armor", emoji: "", rating: "★★★★★", maxQuantity: 16},
+            {id: 40, name: "Netherite Armor Full Set", price: 1000, category: "armor", emoji: "", rating: "★★★★★★", maxQuantity: 16},
             // SUV Cars
-            {id: 100, name: "Blocky Defender", price: 2500, category: "suv", emoji: "🚙", rating: "★★★★☆", maxQuantity: 1, specs: "4WD • 300HP • Off-road ready"},
-            {id: 101, name: "Creeper Cruiser", price: 3200, category: "suv", emoji: "🟢", rating: "★★★★★", maxQuantity: 1, specs: "AWD • 350HP • Explosion resistant"},
-            {id: 102, name: "Enderman Express", price: 4000, category: "suv", emoji: "⚫", rating: "★★★★★", maxQuantity: 1, specs: "Teleport mode • 400HP • Night vision"},
+            {id: 100, name: "Basic SUV", price: 2500, category: "suv", emoji: "🚙", rating: "★★★★☆", maxQuantity: 1, specs: "Small Tank • 3 Cylinder • Off-road ready"},
+            {id: 101, name: "Maacades S350", price: 3200, category: "suv", emoji: "🚙", rating: "★★★★★", maxQuantity: 1, specs: "Medium Tank • 3 Cylinder • Great Fuel, Off-road ready"},
+            {id: 102, name: "Maacades S360", price: 4000, category: "suv", emoji: "🚙", rating: "★★★★★", maxQuantity: 1, specs: "Large Tank • 3 Cylinder • Best For Trips And Off-road ready"},
             // Sports Cars
-            {id: 200, name: "Diamond Dash", price: 5000, category: "sports", emoji: "🏎️", rating: "★★★★★", maxQuantity: 1, specs: "RWD • 500HP • 0-60 in 3.2s"},
-            {id: 201, name: "Redstone Racer", price: 4500, category: "sports", emoji: "🔴", rating: "★★★★☆", maxQuantity: 1, specs: "Electric • 480HP • Boost mode"},
-            {id: 202, name: "Nether Fire", price: 6000, category: "sports", emoji: "🔥", rating: "★★★★★", maxQuantity: 1, specs: "V8 • 600HP • Heat resistant"},
+            {id: 200, name: "Diamond Dasher", price: 5000, category: "sports", emoji: "🏎️", rating: "★★★★★", maxQuantity: 1, specs: "Medium Tank • 6 Cylinder • Fast Speeds"},
+            {id: 201, name: "Maacades X300", price: 4500, category: "sports", emoji: "🏎️", rating: "★★★★☆", maxQuantity: 1, specs: "Small Tank • 6 Cylinder • Little Fuel. But Fastest"},
+            {id: 202, name: "Maamaazon Special", price: 6000, category: "sports", emoji: "🏎️", rating: "★★★★★★", maxQuantity: 1, specs: "Large Tank • 600HP • Best Fuel and Speed"},
             // Regular Cars
-            {id: 300, name: "Village Commuter", price: 1200, category: "regular", emoji: "🚗", rating: "★★★☆☆", maxQuantity: 2, specs: "FWD • 150HP • Fuel efficient"},
-            {id: 301, name: "Crafting Sedan", price: 1800, category: "regular", emoji: "🚙", rating: "★★★★☆", maxQuantity: 2, specs: "AWD • 200HP • Family friendly"},
-            {id: 302, name: "Steve's Special", price: 2200, category: "regular", emoji: "🟫", rating: "★★★★☆", maxQuantity: 1, specs: "AWD • 250HP • Storage space"},
+            {id: 300, name: "Basic Car", price: 1200, category: "regular", emoji: "🚗", rating: "★★★☆☆", maxQuantity: 2, specs: "Small Tank • 3 Cylinder • Great for basic driving"},
+            {id: 301, name: "Maacades B150", price: 1800, category: "regular", emoji: "🚙", rating: "★★★★☆", maxQuantity: 2, specs: "Medium Tank • 3 Cylinder • Great for Small Trips"},
+            {id: 302, name: "Frontier Car", price: 2200, category: "regular", emoji: "🚗", rating: "★★★★★", maxQuantity: 1, specs: "Large Tank • 3 Cylinder • Best for Long Trips"},
             // Transport Cars
-            {id: 400, name: "Block Hauler", price: 3800, category: "transport", emoji: "🚛", rating: "★★★★☆", maxQuantity: 1, specs: "Diesel • 400HP • 10-ton capacity"},
-            {id: 401, name: "Chest Mover", price: 4200, category: "transport", emoji: "📦", rating: "★★★★★", maxQuantity: 1, specs: "V6 • 350HP • 12-ton capacity"},
-            {id: 402, name: "Mining Truck", price: 5500, category: "transport", emoji: "⛏️", rating: "★★★★★", maxQuantity: 1, specs: "Heavy duty • 500HP • 15-ton capacity"}
+            {id: 400, name: "Basic Item Truck", price: 3800, category: "transport", emoji: "🚛", rating: "★★★★☆", maxQuantity: 1, specs: "Medium Tank • 3 Cylinder • 9x6 Capacity"},
+            {id: 401, name: "Basic Liquid Truck", price: 4200, category: "transport", emoji: "📦", rating: "★★★★☆", maxQuantity: 1, specs: "Medium Tank • 3 Cylinder • 1500MB"},
+            {id: 402, name: "Advanced Item Truck", price: 5500, category: "transport", emoji: "🚛", rating: "★★★★★", maxQuantity: 1, specs: "Heavy duty • 500HP • 15-ton capacity"},
+            {id: 403, name: "Advanced Item Truck", price: 5700, category: "transport", emoji: "📦", rating: "★★★★★", maxQuantity: 1, specs: "Heavy duty • 500HP • 15-ton capacity"}
         ];
 
         let cart = [];
@@ -518,7 +538,7 @@
                 productEl.innerHTML = `
                     <div class="product-image">${product.emoji}</div>
                     <div class="product-title">${product.name}</div>
-                    <div class="product-price">${product.price} Copper${product.isGasoline ? ' per ' + product.unit : ''}</div>
+                    <div class="product-price">${product.price} Gold${product.isGasoline ? ' per ' + product.unit : ''}</div>
                     ${product.specs ? `<div class="car-specs">${product.specs}</div>` : ''}
                     <div class="product-rating">${product.rating}</div>
                     <div class="quantity-container">
