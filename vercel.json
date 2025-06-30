@@ -4,7 +4,8 @@
     { "source": "/partners", "destination": "/partners.html" },
     { "source": "/staff", "destination": "/staff.html" },
     { "source": "/maamaazon", "destination": "/maamaazon/index.html" },
-    { "source": "/maamaazon/admin", "destination": "/maamaazon/admin.html" }
+    { "source": "/maamaazon/admin", "destination": "/maamaazon/admin.html" },
+    { "source": "/maamaazon/frontier", "destination": "/maamaazon/frontier.html" }
   ],
   "redirects": [
     { "source": "/status", "destination": "https://status.mememc.club", "permanent": true },
