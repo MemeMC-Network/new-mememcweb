@@ -1170,3 +1170,19 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Original feature card styles */
+.feature-grid.single-line {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.feature-card {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
