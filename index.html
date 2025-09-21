@@ -13,19 +13,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="animate.min.css">
     <style>
-        .feature-grid.single-line {
+        .feature-grid {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
         }
         .feature-card {
-            flex: 1;
-            min-width: 250px;
-            margin: 15px;
-            padding: 25px;
+            flex: 1 1 calc(33.333% - 20px); /* Adjusts to three cards per row */
+            max-width: calc(33.333% - 20px);
+            margin: 10px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .feature-card {
+                flex: 1 1 calc(50% - 20px); /* Two cards per row */
+                max-width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .feature-card {
+                flex: 1 1 100%; /* One card per row */
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -98,8 +115,8 @@
                     <div class="feature-icon">
                         <i class="fa-solid fa-cloud"></i>
                     </div>
-                    <h3>Skywars</h3>
-                    <p>Engage in thrilling battles in the sky, where strategy and quick thinking are key to survival.</p>
+                    <h3>Sheepwars</h3>
+                    <p>Fast-paced Minecraft minigame where players battle using exploding and special sheep instead of normal weapons.</p>
                 </div>
                 <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
                     <div class="feature-icon">

@@ -274,6 +274,38 @@ body {
     }
 }
 
+/* New animations for feature cards */
+.feature-card {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 /* Features Section */
 .features {
     padding: 5rem 2rem;
@@ -991,9 +1023,6 @@ body {
     max-width: 600px; /* Optional: limits the width for better readability */
 }
 
-/* Rules Page Specific Styles */
-20
-CodePreview
 /* Rules Page Specific Styles */
 .rules-page {
     padding-top: 0; /* Remove top padding to extend to nav */
