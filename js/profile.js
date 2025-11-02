@@ -1,5 +1,7 @@
 // Configuration
-const baseUrl = 'http://nd.mememc.club:25570';
+const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://nd.mememc.club:25570'  // Direct connection for local development
+    : '/api';  // Use Vercel proxy for production
 let allPunishments = [];
 let filteredPunishments = [];
 let currentFilter = 'all';

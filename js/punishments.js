@@ -9,7 +9,9 @@ const API_CONFIG = {
     // - 'http://localhost:8080' (for testing)
     // - 'http://your-server-ip:8080' (direct connection)
     // - 'https://api.mememc.club' (with reverse proxy)
-    baseUrl: 'http://nd.mememc.club:25570',
+    baseUrl: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://nd.mememc.club:25570'  // Direct connection for local development
+        : '/api',  // Use Vercel proxy for production
     
     endpoints: {
         bans: '/punishments/bans',
