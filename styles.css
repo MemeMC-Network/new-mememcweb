@@ -570,6 +570,26 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 992px) {
     .nav-links {
         position: fixed;
