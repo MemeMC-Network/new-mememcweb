@@ -101,7 +101,7 @@
 
         .profile-stat:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(6, 116, 15, 0.08);
         }
 
         .profile-stat-number {
@@ -455,7 +455,7 @@
                 if (e.key === 'Enter') {
                     const playerName = e.target.value.trim();
                     if (playerName) {
-                        window.location.href = `profile.html?user=${encodeURIComponent(playerName)}`;
+                        window.location.href = `profile?user=${encodeURIComponent(playerName)}`;
                     }
                 }
             });
