@@ -30,7 +30,7 @@
   /* Custom scrollbar styling */
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
+    scrollbar-color: rgba(90, 137, 125, 0.3) transparent;
   }
 
   *::-webkit-scrollbar {
