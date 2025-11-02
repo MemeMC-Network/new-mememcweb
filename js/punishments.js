@@ -233,7 +233,7 @@ function createPunishmentRow(punishment) {
         <td>
             <div class="player-info">
                 <img src="${avatarUrl}" alt="${punishment.player}" class="player-avatar" onerror="this.src='https://skins.mcstats.com/skull/40f99169-b826-4317-9a64-5e2211638c7d'">
-                <a href="profile.html?user=${encodeURIComponent(punishment.player)}" class="player-name" style="color: #667eea; text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+                <a href="profile?user=${encodeURIComponent(punishment.player)}" class="player-name" style="color: #667eea; text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
                     ${punishment.player}
                 </a>
             </div>
