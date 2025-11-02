@@ -27,7 +27,7 @@ const API_CONFIG = {
 const state = {
     currentFilter: 'all',
     currentPage: 1,
-    itemsPerPage: 20,
+    itemsPerPage: 10,
     searchQuery: '',
     punishments: [],
     filteredPunishments: [],
@@ -131,6 +131,7 @@ function animateValue(element, start, end, duration) {
 // Load Punishments
 async function loadPunishments() {
     showLoading(true);
+    state.currentPage = 1; // Reset to first page
 
     try {
         const endpoint = state.currentFilter === 'all' 
@@ -300,7 +301,8 @@ function changePage(direction) {
 // Handle Search
 function handleSearch(e) {
     state.searchQuery = e.target.value.trim();
-    
+    state.currentPage = 1; // Reset to first page when searching
+
     if (state.searchQuery) {
         elements.clearSearch.style.display = 'flex';
     } else {
@@ -315,6 +317,7 @@ function handleSearch(e) {
 function clearSearch() {
     elements.searchInput.value = '';
     state.searchQuery = '';
+    state.currentPage = 1; // Reset to first page
     elements.clearSearch.style.display = 'none';
     applyFilters();
     displayPunishments();
