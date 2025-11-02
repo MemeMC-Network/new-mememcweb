@@ -9,7 +9,7 @@ const API_CONFIG = {
     // - 'http://localhost:8080' (for testing)
     // - 'http://your-server-ip:8080' (direct connection)
     // - 'https://api.mememc.club' (with reverse proxy)
-    baseUrl: 'http://71.233.19.201:25570',
+    baseUrl: 'http://nd.mememc.club:25570',
     
     endpoints: {
         bans: '/punishments/bans',
