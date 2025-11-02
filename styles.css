@@ -27,6 +27,36 @@
     font-family: 'Poppins', sans-serif;
 }
 
+  /* Custom scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgba(92, 246, 125, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(92, 139, 125, 0.5);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
