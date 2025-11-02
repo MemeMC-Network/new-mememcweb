@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="View punishment history and records for our Minecraft server.">
+    <meta name="keywords" content="MemeMC, MC, Minecraft, Server, Punishments, Bans, Mutes, Blacklists">
+    <meta name="author" content="MemeMC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeMC - Punishments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/punishments.css">
+    <link rel="icon" href="https://panel.mememc.club/storage/VwjoYADexwUXtQiNrwICG7EdK32WKdrAPRkdNuaa.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="animate.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="https://panel.mememc.club/storage/VwjoYADexwUXtQiNrwICG7EdK32WKdrAPRkdNuaa.png" alt="MemeMC Logo" class="logo-img">
+                <span class="logo-text">MemeMC</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="rules" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>Rules</span>
+                </a>
+                <a href="partners" class="nav-link">
+                    <i class="fas fa-handshake"></i>
+                    <span>Partners</span>
+                </a>
+                <a href="staff" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Staff</span>
+                </a>
+                <a href="punishments" class="nav-link active">
+                    <i class="fas fa-gavel"></i>
+                    <span>Punishments</span>
+                </a>
+                <a href="https://store.mememc.club" class="btn btn-store" target="_blank">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Store</span>
+                </a>
+                <a href="#copy" onclick="copyToClipboard('mememc.club')" class="btn btn-join">
+                    <i class="fas fa-plug"></i>
+                    <span>Copy IP</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="punishments-page">
+        <!-- Hero Section -->
+        <section class="punishments-hero animate__animated animate__fadeIn">
+            <div class="hero-content">
+                <h1>Punishment <span class="highlight">Records</span></h1>
+                <p class="subtitle">Browse all bans, mutes, and blacklists issued on our server</p>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="punishments-stats animate__animated animate__fadeInUp">
+            <div class="stat-card" id="stat-bans">
+                <div class="stat-icon">
+                    <i class="fas fa-ban"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-type="bans">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </h3>
+                    <p class="stat-label">Total Bans</p>
+                </div>
+            </div>
+
+            <div class="stat-card" id="stat-mutes">
+                <div class="stat-icon">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-type="mutes">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </h3>
+                    <p class="stat-label">Total Mutes</p>
+                </div>
+            </div>
+
+            <div class="stat-card" id="stat-blacklists">
+                <div class="stat-icon">
+                    <i class="fas fa-user-slash"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-type="blacklists">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </h3>
+                    <p class="stat-label">Total Blacklists</p>
+                </div>
+            </div>
+
+            <div class="stat-card" id="stat-warnings">
+                <div class="stat-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-type="warnings">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </h3>
+                    <p class="stat-label">Total Warnings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="punishments-search animate__animated animate__fadeInUp">
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="playerSearch" 
+                        class="search-input" 
+                        placeholder="Search for a player's punishment history..."
+                    >
+                    <button class="search-clear" id="clearSearch" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Tabs -->
+        <section class="punishments-filters animate__animated animate__fadeInUp">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fas fa-list"></i>
+                    All Punishments
+                </button>
+                <button class="filter-tab" data-filter="bans">
+                    <i class="fas fa-ban"></i>
+                    Bans
+                </button>
+                <button class="filter-tab" data-filter="mutes">
+                    <i class="fas fa-volume-mute"></i>
+                    Mutes
+                </button>
+                <button class="filter-tab" data-filter="blacklists">
+                    <i class="fas fa-user-slash"></i>
+                    Blacklists
+                </button>
+                <button class="filter-tab" data-filter="warnings">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Warnings
+                </button>
+                <button class="filter-tab" data-filter="kicks">
+                    <i class="fas fa-door-open"></i>
+                    Kicks
+                </button>
+            </div>
+        </section>
+
+        <!-- Punishments List -->
+        <section class="punishments-list animate__animated animate__fadeInUp">
+            <div id="punishmentsContainer" class="punishments-container">
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <p>Loading punishments...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <h3>No punishments found</h3>
+                    <p>No records match your search criteria.</p>
+                </div>
+
+                <!-- Punishments Table -->
+                <div class="punishments-table-container" id="tableContainer" style="display: none;">
+                    <table class="punishments-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Type</th>
+                                <th>Reason</th>
+                                <th>Staff</th>
+                                <th>Duration</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="punishmentsTableBody">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination" style="display: none;">
+                    <button class="pagination-btn" id="prevPage" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    <span class="pagination-info" id="pageInfo">Page 1 of 1</span>
+                    <button class="pagination-btn" id="nextPage" disabled>
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-container">
+            <div class="footer-brand animate__animated animate__fadeIn">
+                <img src="https://panel.mememc.club/storage/VwjoYADexwUXtQiNrwICG7EdK32WKdrAPRkdNuaa.png" alt="MemeMC Logo">
+                <div class="brand-info">
+                    <h3>MemeMC</h3>
+                    <p>Craft. Laugh. Repeat.</p>
+                </div>
+            </div>
+            
+            <div class="footer-social animate__animated animate__fadeIn">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="https://dsc.gg/mememc" target="_blank" class="social-link discord" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://tiktok.com/@mememcclub" target="_blank" class="social-link tiktok" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://instagram.com/mememcclub" target="_blank" class="social-link instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/mememcclub" target="_blank" class="social-link twitter" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com/@mememcclub" target="_blank" class="social-link youtube" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://store.mememc.club" target="_blank" class="social-link store" aria-label="Store" target="_blank">
+                        <i class="fas fa-store"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links animate__animated animate__fadeIn animate__delay-0.5s">
+                <div class="link-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="rules"><i class="fas fa-chevron-right"></i> Rules</a></li>
+                        <li><a href="partners"><i class="fas fa-chevron-right"></i> Partners</a></li>
+                        <li><a href="staff"><i class="fas fa-chevron-right"></i> Staff</a></li>
+                        <li><a href="punishments"><i class="fas fa-chevron-right"></i> Punishments</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><a href="status" target="_blank" title="MemeMC Status Page" style="color: #eaeaea;"><i class="fa-solid fa-signal" style="color: #eaeaea;">  MemeMC Status</i></a></p>
+            <p>© 2025 MemeMC. All rights reserved.</p>
+            <p>Minecraft is a trademark of Mojang Studios. Not affiliated with Mojang or Microsoft.</p>
+        </div>
+    </footer>
+
+    <script src="js/punishments.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
