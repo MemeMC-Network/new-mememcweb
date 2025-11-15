@@ -122,7 +122,7 @@ function displayProfileCard() {
         bans: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'ban').length,
         mutes: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'mute').length,
         blacklists: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'blacklist').length,
-        warnings: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'warning').length,
+        warnings: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'warn').length,
         kicks: allPunishments.filter(p => p.type && p.type.toLowerCase() === 'kick').length
     };
     
