@@ -295,7 +295,7 @@ function getTypeIcon(type) {
         'ban': 'ban',
         'mute': 'volume-mute',
         'blacklist': 'user-slash',
-        'warning': 'exclamation-triangle',
+        'warn': 'exclamation-triangle',
         'kick': 'door-open'
     };
     return icons[type.toLowerCase()] || 'gavel';
