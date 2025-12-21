@@ -720,7 +720,6 @@ body::before {
 
 .features h2 .highlight {
     display: inline-block;
-    animation: wobble 2s ease-in-out infinite;
 }
 
 .feature-grid {
