@@ -1,3 +1,53 @@
+// Loading Screen
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        // Hide loader 0.3 seconds after page fully loads
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            // Remove from DOM after transition
+            setTimeout(() => {
+                loader.remove();
+            }, 500);
+        }, 300);
+    }
+});
+
+// Show loader on page navigation
+window.addEventListener('beforeunload', function() {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        loader.classList.remove('hidden');
+    }
+});
+
+// Add loading screen on internal link clicks
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (link && link.href && !link.target && !link.href.startsWith('#') && !link.href.includes('javascript:')) {
+        // Check if it's an internal link
+        if (link.hostname === window.location.hostname) {
+            // Create temporary loader if it doesn't exist
+            let loader = document.querySelector('.page-loader');
+            if (!loader) {
+                loader = document.createElement('div');
+                loader.className = 'page-loader';
+                loader.innerHTML = `
+                    <div class="loader-content">
+                        <div class="loader-logo">
+                            <img src="https://panel.mememc.club/storage/VwjoYADexwUXtQiNrwICG7EdK32WKdrAPRkdNuaa.png" alt="Loading...">
+                            <div class="loader-spinner"></div>
+                        </div>
+                        <div class="loader-text">LOADING</div>
+                    </div>
+                `;
+                document.body.appendChild(loader);
+            }
+            loader.classList.remove('hidden');
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
